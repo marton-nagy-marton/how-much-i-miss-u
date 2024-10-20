@@ -1,4 +1,44 @@
+// Hardcoded username
+const correctUsername = "Anna";
+
+// Check login
+function login() {
+    const enteredUsername = document.getElementById('username').value;
+    if (enteredUsername === correctUsername) {
+        // Hide login page
+        document.getElementById('login-page').style.display = 'none';
+        // Show main content
+        document.getElementById('main-content').style.display = 'block';
+        // Display initial message and timestamp
+        missMessage.innerText = getRandomMessage();
+        // const now = new Date();
+        // timestamp.innerText = `Last checked: ${now.toLocaleString()}`;
+     } else {
+        // Show error message
+        document.getElementById('error-message').style.display = 'block';
+        }    
+}
+
+// Function to get a random message
+function getRandomMessage() {
+    const randomIndex = Math.floor(Math.random() * messages.length);
+    return messages[randomIndex];
+}
+
+// Wait for the window to load to show login page
 window.onload = function() {
+    document.getElementById('login-page').style.display = 'flex';
+};
+
+// Handle refreshing messages
+const missMessage = document.getElementById('miss-message');
+// const timestamp = document.getElementById('timestamp');
+const newMessageBtn = document.getElementById('new-message-btn');
+        
+newMessageBtn.onclick = function() {
+    missMessage.innerText = getRandomMessage();
+};
+
     const messages = [
         "I miss you like the shine of your eyes when you walk into your bedroom while brushing your teeth to see me.",
         "I miss you like the moments we share over brunch I made you at home.",
@@ -147,25 +187,3 @@ window.onload = function() {
         "I miss you like the anticipation of planning our future adventures together.",
         "I miss you like the way your laughter fills the room with joy."
     ];
-
-    // Function to get a random message
-    function getRandomMessage() {
-        const randomIndex = Math.floor(Math.random() * messages.length);
-        return messages[randomIndex];
-    }
-
-    const missMessage = document.getElementById('miss-message');
-    // const timestamp = document.getElementById('timestamp');
-
-    // Display a random miss message
-    missMessage.innerText = getRandomMessage();
-
-    // Get the current date and time and display it
-    // const now = new Date();
-    // timestamp.innerText = `Last checked: ${now.toLocaleString()}`;
-    const newMessageBtn = document.getElementById('new-message-btn');
-    newMessageBtn.onclick = function() {
-    missMessage.innerText = getRandomMessage();
-};
-
-};
