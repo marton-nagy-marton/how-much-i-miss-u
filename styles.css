@@ -31,3 +31,7 @@ h2 {
     font-size: 1em;
     color: #777;
 }
+
+#new-message-btn {
+    display: none;
+}
