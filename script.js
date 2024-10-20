@@ -153,7 +153,7 @@ window.onload = function() {
 }
 
 // Hardcoded username
-const correctUsername = "Anna1";
+const correctUsername = "Anna2";
 
 // Declare these outside so they are accessible everywhere
 let missMessage;
@@ -178,6 +178,9 @@ function login() {
         document.getElementById('login-page').style.display = 'none';
         // Show main content
         document.getElementById('main-content').style.display = 'block';
+        // Make the button visible after login
+        newMessageBtn.style.display = 'block';
+        // assign elements
         missMessage = document.getElementById('miss-message');
         newMessageBtn = document.getElementById('new-message-btn');
         // Display initial message
