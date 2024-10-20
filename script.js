@@ -155,9 +155,9 @@ window.onload = function() {
 // Hardcoded username
 const correctUsername = "Anna1";
 
-// Handle refreshing messages
-const missMessage = document.getElementById('miss-message');
-const newMessageBtn = document.getElementById('new-message-btn');
+// Declare these outside so they are accessible everywhere
+let missMessage;
+let newMessageBtn;
 
 // Function to get a random message
 function getRandomMessage() {
@@ -178,8 +178,14 @@ function login() {
         document.getElementById('login-page').style.display = 'none';
         // Show main content
         document.getElementById('main-content').style.display = 'block';
-        // Display initial message and timestamp
+        missMessage = document.getElementById('miss-message');
+        newMessageBtn = document.getElementById('new-message-btn');
+        // Display initial message
         displayMessage();
+        // Button functionality
+        newMessageBtn.onclick = function() {
+            displayMessage();
+        };
         // const now = new Date();
         // timestamp.innerText = `Last checked: ${now.toLocaleString()}`;
      } else {
@@ -187,8 +193,3 @@ function login() {
         document.getElementById('error-message').style.display = 'block';
         }    
 }
-
-// Button functionality
-newMessageBtn.onclick = function() {
-    displayMessage();
-};
