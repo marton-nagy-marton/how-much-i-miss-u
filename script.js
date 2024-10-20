@@ -153,7 +153,7 @@ window.onload = function() {
 }
 
 // Hardcoded username
-const correctUsername = "Anna5";
+const correctUsername = "PöttyösPenne";
 
 // Declare these outside so they are accessible everywhere
 let missMessage;
