@@ -150,6 +150,13 @@ const messages = [
 // Wait for the window to load to show login page
 window.onload = function() {
     document.getElementById('login-page').style.display = 'flex';
+
+    // Add event listener for Enter key press
+    document.getElementById('username').addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            login(); // Call the login function on Enter key press
+        }
+    });
 }
 
 // Hardcoded username
