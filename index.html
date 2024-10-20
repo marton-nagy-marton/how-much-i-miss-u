@@ -11,21 +11,18 @@
     <div id="login-page">
         <div id="login-form">
             <h2>Login</h2>
-            <input type="text" id="username" placeholder="Enter your secret username!">
+            <input type="text" id="username" placeholder="Enter your secret code!">
             <button onclick="login()">Login</button>
             <p id="error-message" style="color:red; display:none;">Incorrect username!</p>
         </div>
     </div>
-    <div class="container">
-        <!-- Constant title -->
+    
+    <div class="container" style="display:none;"> <!-- Initially hidden -->
         <h2>Hey Anna, I just wanted to tell you how much I miss you right now:</h2>
-
-        <!-- Dynamic message that changes on page load -->
         <h1 id="miss-message">Please login to see messages <3</h1>
         <button id="new-message-btn">Get another comparison!</button>
-        <!-- Timestamp to show when the page was loaded -->
-        <!-- <p id="timestamp"></p> -->
     </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
