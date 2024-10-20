@@ -1,10 +1,29 @@
 window.onload = function() {
-    const message = "I miss you so much!";
+    const messages = [
+        "I miss you so much!",
+        "Every second without you feels like an eternity.",
+        "I can't wait to hold you again.",
+        "I miss your smile more than words can say.",
+        "Being apart from you is the hardest thing.",
+        "I miss you like crazy!",
+        "Life feels incomplete without you.",
+        "Every day without you is a challenge.",
+        "I wish you were here with me right now.",
+        "You're always on my mind.",
+        // Add more messages up to 100
+    ];
+
+    // Function to get a random message
+    function getRandomMessage() {
+        const randomIndex = Math.floor(Math.random() * messages.length);
+        return messages[randomIndex];
+    }
+
     const missMessage = document.getElementById('miss-message');
     const timestamp = document.getElementById('timestamp');
 
-    // Display the miss message
-    missMessage.innerText = message;
+    // Display a random miss message
+    missMessage.innerText = getRandomMessage();
 
     // Get the current date and time and display it
     const now = new Date();
