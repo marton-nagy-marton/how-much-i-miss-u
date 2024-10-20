@@ -202,14 +202,14 @@ window.onload = function() {
     }
 
     const missMessage = document.getElementById('miss-message');
-    const timestamp = document.getElementById('timestamp');
+    // const timestamp = document.getElementById('timestamp');
 
     // Display a random miss message
     missMessage.innerText = getRandomMessage();
 
     // Get the current date and time and display it
-    const now = new Date();
-    timestamp.innerText = `Last checked: ${now.toLocaleString()}`;
+    // const now = new Date();
+    // timestamp.innerText = `Last checked: ${now.toLocaleString()}`;
     const newMessageBtn = document.getElementById('new-message-btn');
     newMessageBtn.onclick = function() {
     missMessage.innerText = getRandomMessage();
