@@ -14,6 +14,11 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    height: 100%; /* Ensure the container takes full height */
 }
 
 h1 {
