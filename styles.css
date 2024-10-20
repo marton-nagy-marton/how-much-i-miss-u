@@ -14,11 +14,12 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex; /* Use flexbox */
-    flex-direction: column; /* Stack items vertically */
-    justify-content: center; /* Center items vertically */
-    align-items: center; /* Center items horizontally */
-    height: 100%; /* Ensure the container takes full height */
+    display: block; /* Change back to block for normal layout */
+}
+
+#new-message-btn {
+    display: none; /* Hide initially */
+    margin: 20px auto; /* Center the button with margin auto */
 }
 
 h1 {
@@ -35,8 +36,4 @@ h2 {
 #timestamp {
     font-size: 1em;
     color: #777;
-}
-
-#new-message-btn {
-    display: none;
 }
