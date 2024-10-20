@@ -210,4 +210,9 @@ window.onload = function() {
     // Get the current date and time and display it
     const now = new Date();
     timestamp.innerText = `Last checked: ${now.toLocaleString()}`;
+    const newMessageBtn = document.getElementById('new-message-btn');
+    newMessageBtn.onclick = function() {
+    missMessage.innerText = getRandomMessage();
+};
+
 };
