@@ -1,6 +1,6 @@
 window.onload = function() {
     const messages = [
-        "I miss you so much!",
+        "I miss you very much",
         "Every second without you feels like an eternity.",
         "I can't wait to hold you again.",
         "I miss your smile more than words can say.",
@@ -9,8 +9,7 @@ window.onload = function() {
         "Life feels incomplete without you.",
         "Every day without you is a challenge.",
         "I wish you were here with me right now.",
-        "You're always on my mind.",
-        // Add more messages up to 100
+        "You're always on my mind."
     ];
 
     // Function to get a random message
