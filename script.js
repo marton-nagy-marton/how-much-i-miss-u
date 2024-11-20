@@ -159,12 +159,20 @@ window.onload = function() {
     });
 }
 
-// Hardcoded username
-const correctUsername = "PöttyösPenne";
+// Hardcoded hashed username (sha-256 hash of "PöttyösPenne")
+const correctHash = "788376ae76c1867cbd00336e15147601e77279b4e22a2dc48967d4fdd7a6ea6b";
 
 // Declare these outside so they are accessible everywhere
 let missMessage;
 let newMessageBtn;
+
+// Function to hash input using SHA-256
+async function hashInput(input) {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(input);
+    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+    return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
 
 // Function to get a random message
 function getRandomMessage() {
@@ -178,14 +186,16 @@ function displayMessage() {
 }
 
 // Check login
-function login() {
+async function login() {
     const enteredUsername = document.getElementById('username').value;
-    if (enteredUsername === correctUsername) {
+    const enteredHash = await hashInput(enteredUsername); // Hash the user input
+
+    if (enteredHash === correctHash) {
         // Hide login page
         document.getElementById('login-page').style.display = 'none';
         // Show main content
         document.querySelector('.container').style.display = 'block';
-        // assign elements
+        // Assign elements
         missMessage = document.getElementById('miss-message');
         newMessageBtn = document.getElementById('new-message-btn');
         // Make the button visible after login
@@ -196,10 +206,8 @@ function login() {
         newMessageBtn.onclick = function() {
             displayMessage();
         };
-        // const now = new Date();
-        // timestamp.innerText = `Last checked: ${now.toLocaleString()}`;
-     } else {
+    } else {
         // Show error message
         document.getElementById('error-message').style.display = 'block';
-        }    
+    }    
 }
